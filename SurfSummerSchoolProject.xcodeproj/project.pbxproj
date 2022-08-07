@@ -19,6 +19,9 @@
 		E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D528289A9C7100DC3BD6 /* TabBarModel.swift */; };
 		E349D52B289A9FD500DC3BD6 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D52A289A9FD500DC3BD6 /* TabBarConfigurator.swift */; };
 		E349D530289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D52F289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift */; };
+		E3A3AE79289F9AFC006716C8 /* MainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */; };
+		E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */; };
+		E3A3AE7C289F9D70006716C8 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3AE7B289F9D70006716C8 /* MainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		E349D528289A9C7100DC3BD6 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		E349D52A289A9FD500DC3BD6 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
 		E349D52F289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConfigurator.swift; sourceTree = "<group>"; };
+		E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		E3A3AE7B289F9D70006716C8 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +115,10 @@
 		E349D519289A8F4D00DC3BD6 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				E3A3AE76289F9A3D006716C8 /* Cells */,
 				E349D51C289A960000DC3BD6 /* MainViewController.swift */,
 				E349D51D289A960000DC3BD6 /* MainViewController.xib */,
+				E3A3AE7B289F9D70006716C8 /* MainModel.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -131,6 +139,15 @@
 				E349D525289A9B9900DC3BD6 /* FavoriteViewController.xib */,
 			);
 			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		E3A3AE76289F9A3D006716C8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */,
+				E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +210,7 @@
 			files = (
 				E3172467289A3A2100517E1E /* LaunchScreen.storyboard in Resources */,
 				E3172464289A3A2100517E1E /* Assets.xcassets in Resources */,
+				E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */,
 				E349D527289A9B9900DC3BD6 /* FavoriteViewController.xib in Resources */,
 				E349D523289A9B1F00DC3BD6 /* ProfileViewController.xib in Resources */,
 				E349D51F289A960000DC3BD6 /* MainViewController.xib in Resources */,
@@ -210,6 +228,8 @@
 				E317245B289A3A1A00517E1E /* AppDelegate.swift in Sources */,
 				E349D522289A9B1F00DC3BD6 /* ProfileViewController.swift in Sources */,
 				E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */,
+				E3A3AE79289F9AFC006716C8 /* MainItemCollectionViewCell.swift in Sources */,
+				E3A3AE7C289F9D70006716C8 /* MainModel.swift in Sources */,
 				E349D52B289A9FD500DC3BD6 /* TabBarConfigurator.swift in Sources */,
 				E349D530289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift in Sources */,
 				E349D526289A9B9900DC3BD6 /* FavoriteViewController.swift in Sources */,
