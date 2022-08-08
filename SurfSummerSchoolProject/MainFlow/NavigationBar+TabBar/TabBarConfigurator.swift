@@ -42,6 +42,7 @@ private extension TabBarConfigurator {
             let tabBarItem = UITabBarItem(title: tab.title, image: tab.image, selectedImage: tab.selectedImage)
             controller.tabBarItem = tabBarItem
             viewControllers.append(navigationView)
+
         }
         
         return viewControllers

@@ -19,6 +19,11 @@
 		E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D528289A9C7100DC3BD6 /* TabBarModel.swift */; };
 		E349D52B289A9FD500DC3BD6 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D52A289A9FD500DC3BD6 /* TabBarConfigurator.swift */; };
 		E349D530289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D52F289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift */; };
+		E38D665E289FDDED0049F59A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D665C289FDDED0049F59A /* SearchViewController.swift */; };
+		E38D665F289FDDED0049F59A /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38D665D289FDDED0049F59A /* SearchViewController.xib */; };
+		E38D6661289FEEAA0049F59A /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D6660289FEEAA0049F59A /* SearchModel.swift */; };
+		E38D666628A0E5530049F59A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D666428A0E5530049F59A /* DetailViewController.swift */; };
+		E38D666728A0E5530049F59A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38D666528A0E5530049F59A /* DetailViewController.xib */; };
 		E3A3AE79289F9AFC006716C8 /* MainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */; };
 		E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */; };
 		E3A3AE7C289F9D70006716C8 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3AE7B289F9D70006716C8 /* MainModel.swift */; };
@@ -39,6 +44,11 @@
 		E349D528289A9C7100DC3BD6 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		E349D52A289A9FD500DC3BD6 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
 		E349D52F289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarConfigurator.swift; sourceTree = "<group>"; };
+		E38D665C289FDDED0049F59A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E38D665D289FDDED0049F59A /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		E38D6660289FEEAA0049F59A /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		E38D666428A0E5530049F59A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E38D666528A0E5530049F59A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		E3A3AE7B289F9D70006716C8 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -84,6 +94,8 @@
 		E349D516289A8EA500DC3BD6 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				E38D666328A0E5140049F59A /* DetailModule */,
+				E38D665B289FDD7D0049F59A /* SearchModule */,
 				E349D518289A8F4500DC3BD6 /* NavigationBar+TabBar */,
 				E349D519289A8F4D00DC3BD6 /* MainModule */,
 				E349D51B289A8F5F00DC3BD6 /* FavoriteModule */,
@@ -139,6 +151,25 @@
 				E349D525289A9B9900DC3BD6 /* FavoriteViewController.xib */,
 			);
 			path = FavoriteModule;
+			sourceTree = "<group>";
+		};
+		E38D665B289FDD7D0049F59A /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				E38D665C289FDDED0049F59A /* SearchViewController.swift */,
+				E38D665D289FDDED0049F59A /* SearchViewController.xib */,
+				E38D6660289FEEAA0049F59A /* SearchModel.swift */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		E38D666328A0E5140049F59A /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				E38D666428A0E5530049F59A /* DetailViewController.swift */,
+				E38D666528A0E5530049F59A /* DetailViewController.xib */,
+			);
+			path = DetailModule;
 			sourceTree = "<group>";
 		};
 		E3A3AE76289F9A3D006716C8 /* Cells */ = {
@@ -211,9 +242,11 @@
 				E3172467289A3A2100517E1E /* LaunchScreen.storyboard in Resources */,
 				E3172464289A3A2100517E1E /* Assets.xcassets in Resources */,
 				E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */,
+				E38D666728A0E5530049F59A /* DetailViewController.xib in Resources */,
 				E349D527289A9B9900DC3BD6 /* FavoriteViewController.xib in Resources */,
 				E349D523289A9B1F00DC3BD6 /* ProfileViewController.xib in Resources */,
 				E349D51F289A960000DC3BD6 /* MainViewController.xib in Resources */,
+				E38D665F289FDDED0049F59A /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,11 +257,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E38D665E289FDDED0049F59A /* SearchViewController.swift in Sources */,
 				E349D51E289A960000DC3BD6 /* MainViewController.swift in Sources */,
 				E317245B289A3A1A00517E1E /* AppDelegate.swift in Sources */,
+				E38D666628A0E5530049F59A /* DetailViewController.swift in Sources */,
 				E349D522289A9B1F00DC3BD6 /* ProfileViewController.swift in Sources */,
 				E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */,
 				E3A3AE79289F9AFC006716C8 /* MainItemCollectionViewCell.swift in Sources */,
+				E38D6661289FEEAA0049F59A /* SearchModel.swift in Sources */,
 				E3A3AE7C289F9D70006716C8 /* MainModel.swift in Sources */,
 				E349D52B289A9FD500DC3BD6 /* TabBarConfigurator.swift in Sources */,
 				E349D530289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift in Sources */,
