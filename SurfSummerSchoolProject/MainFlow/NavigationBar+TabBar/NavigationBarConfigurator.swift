@@ -23,11 +23,10 @@ func getNavigationController(rootViewController: UIViewController) -> UIViewCont
     let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"), style: .plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
     backButton.tintColor = .black
     
-    
     navigationController.navigationBar.topItem?.rightBarButtonItem = searchButton
-    navigationController.navigationBar.topItem?.title = "Главная"
     navigationController.navigationBar.topItem?.leftBarButtonItem = backButton
-    
+    //    navigationController.navigationBar.topItem?.title = "Главная"
+        
     return navigationController
 }
     

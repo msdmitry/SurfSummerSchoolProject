@@ -27,6 +27,14 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     var buttonImage: UIImage? {
         return isFavorite ? Constants.fillHeartImage : Constants.heartImage
     }
+    
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.2) {
+                self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
+            }
+        }
+    }
 
     // MARK: - Properties
     var title: String = "" {

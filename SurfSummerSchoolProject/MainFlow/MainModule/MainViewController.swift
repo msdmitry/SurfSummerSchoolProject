@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Constants
     private enum Constants {
@@ -27,22 +27,24 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         configureApperance()
         configureModel()
+        configureNavigationBar()
         model.getPosts()
-        model.items[5].isFavorite = true
+//        model.items[5].isFavorite = true
     }
 
 }
 
 // MARK: - Private Methods
+
 private extension MainViewController {
 
     func configureApperance() {
-        navigationItem.title = "Главная"
         collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main),
                                 forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     func configureModel() {
@@ -50,10 +52,24 @@ private extension MainViewController {
             self?.collectionView.reloadData()
         }
     }
+    
+    func configureNavigationBar() {
+        navigationItem.title = "Главная"
+        let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
+        navigationItem.rightBarButtonItem = searchButton
+        searchButton.tintColor = .black
+    }
+    
+    @objc func callSearchViewController() {
+        let searchVC = SearchViewController()
+        navigationController?.pushViewController(searchVC, animated: true)
+    }
+    
 
 }
 
 // MARK: - UICollection
+
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -88,7 +104,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+        let vc = DetailViewController()
+        vc.model = model.items[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }

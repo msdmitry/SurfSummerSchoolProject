@@ -11,8 +11,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        configureApperance()
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
 //    func configureApperance() {

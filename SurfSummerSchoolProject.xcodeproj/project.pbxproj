@@ -24,6 +24,13 @@
 		E38D6661289FEEAA0049F59A /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D6660289FEEAA0049F59A /* SearchModel.swift */; };
 		E38D666628A0E5530049F59A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D666428A0E5530049F59A /* DetailViewController.swift */; };
 		E38D666728A0E5530049F59A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38D666528A0E5530049F59A /* DetailViewController.xib */; };
+		E38D666C28A152AE0049F59A /* DetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D666A28A152AE0049F59A /* DetailImageTableViewCell.swift */; };
+		E38D666D28A152AE0049F59A /* DetailImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38D666B28A152AE0049F59A /* DetailImageTableViewCell.xib */; };
+		E38D667128A157F40049F59A /* DetailTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D666F28A157F40049F59A /* DetailTitleTableViewCell.swift */; };
+		E38D667228A157F40049F59A /* DetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38D667028A157F40049F59A /* DetailTitleTableViewCell.xib */; };
+		E38D667528A18C770049F59A /* DetailTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D667328A18C770049F59A /* DetailTextTableViewCell.swift */; };
+		E38D667628A18C770049F59A /* DetailTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E38D667428A18C770049F59A /* DetailTextTableViewCell.xib */; };
+		E38D667928A19DB40049F59A /* DetailItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38D667828A19DB40049F59A /* DetailItemModel.swift */; };
 		E3A3AE79289F9AFC006716C8 /* MainItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */; };
 		E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */; };
 		E3A3AE7C289F9D70006716C8 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A3AE7B289F9D70006716C8 /* MainModel.swift */; };
@@ -49,6 +56,13 @@
 		E38D6660289FEEAA0049F59A /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		E38D666428A0E5530049F59A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E38D666528A0E5530049F59A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		E38D666A28A152AE0049F59A /* DetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageTableViewCell.swift; sourceTree = "<group>"; };
+		E38D666B28A152AE0049F59A /* DetailImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageTableViewCell.xib; sourceTree = "<group>"; };
+		E38D666F28A157F40049F59A /* DetailTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTitleTableViewCell.swift; sourceTree = "<group>"; };
+		E38D667028A157F40049F59A /* DetailTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTitleTableViewCell.xib; sourceTree = "<group>"; };
+		E38D667328A18C770049F59A /* DetailTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextTableViewCell.swift; sourceTree = "<group>"; };
+		E38D667428A18C770049F59A /* DetailTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTextTableViewCell.xib; sourceTree = "<group>"; };
+		E38D667828A19DB40049F59A /* DetailItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemModel.swift; sourceTree = "<group>"; };
 		E3A3AE77289F9AFC006716C8 /* MainItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		E3A3AE78289F9AFC006716C8 /* MainItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		E3A3AE7B289F9D70006716C8 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -131,6 +145,7 @@
 				E349D51C289A960000DC3BD6 /* MainViewController.swift */,
 				E349D51D289A960000DC3BD6 /* MainViewController.xib */,
 				E3A3AE7B289F9D70006716C8 /* MainModel.swift */,
+				E38D667828A19DB40049F59A /* DetailItemModel.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -166,10 +181,48 @@
 		E38D666328A0E5140049F59A /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				E38D666828A1524C0049F59A /* Cells */,
 				E38D666428A0E5530049F59A /* DetailViewController.swift */,
 				E38D666528A0E5530049F59A /* DetailViewController.xib */,
 			);
 			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		E38D666828A1524C0049F59A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E38D666E28A157C30049F59A /* TitleCell */,
+				E38D666928A152550049F59A /* ImageCell */,
+				E38D667728A18DC10049F59A /* TextCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E38D666928A152550049F59A /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				E38D666A28A152AE0049F59A /* DetailImageTableViewCell.swift */,
+				E38D666B28A152AE0049F59A /* DetailImageTableViewCell.xib */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		E38D666E28A157C30049F59A /* TitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				E38D666F28A157F40049F59A /* DetailTitleTableViewCell.swift */,
+				E38D667028A157F40049F59A /* DetailTitleTableViewCell.xib */,
+			);
+			path = TitleCell;
+			sourceTree = "<group>";
+		};
+		E38D667728A18DC10049F59A /* TextCell */ = {
+			isa = PBXGroup;
+			children = (
+				E38D667328A18C770049F59A /* DetailTextTableViewCell.swift */,
+				E38D667428A18C770049F59A /* DetailTextTableViewCell.xib */,
+			);
+			path = TextCell;
 			sourceTree = "<group>";
 		};
 		E3A3AE76289F9A3D006716C8 /* Cells */ = {
@@ -240,9 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3172467289A3A2100517E1E /* LaunchScreen.storyboard in Resources */,
+				E38D666D28A152AE0049F59A /* DetailImageTableViewCell.xib in Resources */,
 				E3172464289A3A2100517E1E /* Assets.xcassets in Resources */,
+				E38D667228A157F40049F59A /* DetailTitleTableViewCell.xib in Resources */,
 				E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */,
 				E38D666728A0E5530049F59A /* DetailViewController.xib in Resources */,
+				E38D667628A18C770049F59A /* DetailTextTableViewCell.xib in Resources */,
 				E349D527289A9B9900DC3BD6 /* FavoriteViewController.xib in Resources */,
 				E349D523289A9B1F00DC3BD6 /* ProfileViewController.xib in Resources */,
 				E349D51F289A960000DC3BD6 /* MainViewController.xib in Resources */,
@@ -260,15 +316,19 @@
 				E38D665E289FDDED0049F59A /* SearchViewController.swift in Sources */,
 				E349D51E289A960000DC3BD6 /* MainViewController.swift in Sources */,
 				E317245B289A3A1A00517E1E /* AppDelegate.swift in Sources */,
+				E38D667928A19DB40049F59A /* DetailItemModel.swift in Sources */,
 				E38D666628A0E5530049F59A /* DetailViewController.swift in Sources */,
+				E38D666C28A152AE0049F59A /* DetailImageTableViewCell.swift in Sources */,
 				E349D522289A9B1F00DC3BD6 /* ProfileViewController.swift in Sources */,
 				E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */,
 				E3A3AE79289F9AFC006716C8 /* MainItemCollectionViewCell.swift in Sources */,
 				E38D6661289FEEAA0049F59A /* SearchModel.swift in Sources */,
+				E38D667528A18C770049F59A /* DetailTextTableViewCell.swift in Sources */,
 				E3A3AE7C289F9D70006716C8 /* MainModel.swift in Sources */,
 				E349D52B289A9FD500DC3BD6 /* TabBarConfigurator.swift in Sources */,
 				E349D530289AD3DD00DC3BD6 /* NavigationBarConfigurator.swift in Sources */,
 				E349D526289A9B9900DC3BD6 /* FavoriteViewController.swift in Sources */,
+				E38D667128A157F40049F59A /* DetailTitleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

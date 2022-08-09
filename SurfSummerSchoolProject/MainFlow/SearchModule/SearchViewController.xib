@@ -34,7 +34,7 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yVs-8v-Hn2">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-eye-line" translatesAutoresizingMaskIntoConstraints="NO" id="yVs-8v-Hn2">
                     <rect key="frame" x="191" y="296" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="Tqh-NJ-6NE"/>
@@ -55,6 +55,7 @@
         </view>
     </objects>
     <resources>
+        <image name="search-eye-line" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
