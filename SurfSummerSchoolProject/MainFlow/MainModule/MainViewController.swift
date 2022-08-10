@@ -10,6 +10,7 @@ import UIKit
 final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Constants
+    
     private enum Constants {
         static let horisontalInset: CGFloat = 16
         static let spaceBetweenElements: CGFloat = 7
@@ -17,12 +18,15 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
 
     // MARK: - Private Properties
+    
     private let model: MainModel = .init()
 
     // MARK: - Views
+    
     @IBOutlet private weak var collectionView: UICollectionView!
 
     // MARK: - Lifeсyrcle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureApperance()
@@ -44,7 +48,6 @@ private extension MainViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 
     func configureModel() {
@@ -54,10 +57,12 @@ private extension MainViewController {
     }
     
     func configureNavigationBar() {
+        navigationItem.leftBarButtonItem = nil
         navigationItem.title = "Главная"
         let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
         navigationItem.rightBarButtonItem = searchButton
         searchButton.tintColor = .black
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @objc func callSearchViewController() {

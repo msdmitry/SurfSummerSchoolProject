@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: - Views
     
@@ -47,8 +47,7 @@ private extension DetailViewController {
         let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
         navigationItem.rightBarButtonItem = searchButton
             searchButton.tintColor = .black
-        // ???не работает бэксвайп >_<
-//        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @objc func callSearchViewController() {
@@ -77,6 +76,7 @@ private extension DetailViewController {
 //MARK: - UITableViewDataSource
 
 extension DetailViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         3
     }
