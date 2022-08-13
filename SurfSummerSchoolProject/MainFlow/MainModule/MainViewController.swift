@@ -32,8 +32,21 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         configureApperance()
         configureModel()
         configureNavigationBar()
-        model.getPosts()
+        model.loadPosts()
 //        model.items[5].isFavorite = true
+        
+        let credentials = AuthRequestModel(phone: "+79876543219", password: "qwerty")
+        AuthService().performLoginRequest(credentials: credentials) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        PicturesService().loadPictures { result in
+            print(result)
+        }
     }
 
 }
@@ -48,13 +61,24 @@ private extension MainViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
+        
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.rightBackSwipe))
+        swipeRecognizer.direction = .right
+        view.addGestureRecognizer(swipeRecognizer)
+    }
+    
+    @objc
+    func rightBackSwipe(sender: UISwipeGestureRecognizer) {
+        dismiss(animated: true, completion: nil)
     }
 
     func configureModel() {
-        model.didItemsUpdated = { [weak self] in
-            self?.collectionView.reloadData()
-        }
-    }
+         model.didItemsUpdated = { [weak self] in
+             DispatchQueue.main.async {
+                 self?.collectionView.reloadData()
+             }
+         }
+     }
     
     func configureNavigationBar() {
         navigationItem.leftBarButtonItem = nil
@@ -62,7 +86,7 @@ private extension MainViewController {
         let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
         navigationItem.rightBarButtonItem = searchButton
         searchButton.tintColor = .black
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
     @objc func callSearchViewController() {
@@ -87,7 +111,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let item = model.items[indexPath.row]
             cell.title = item.title
             cell.isFavorite = item.isFavorite
-            cell.image = item.image
+            cell.imageUrlInString = item.imageUrlInString
             cell.didFavoritesTapped = { [weak self] in
                 self?.model.items[indexPath.row].isFavorite.toggle()
             }

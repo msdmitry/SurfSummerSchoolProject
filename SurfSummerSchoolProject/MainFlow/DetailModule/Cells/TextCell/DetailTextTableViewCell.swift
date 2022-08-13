@@ -11,7 +11,7 @@ class DetailTextTableViewCell: UITableViewCell {
     
     //MARK: - Views
     
-    @IBOutlet private weak var contentLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     
     //MARK: - Properties
     
@@ -28,7 +28,7 @@ class DetailTextTableViewCell: UITableViewCell {
         configureAppearence()
     }
     
-    private func configureAppearence() {
+    func configureAppearence() {
         selectionStyle = .none
         contentLabel.font = .systemFont(ofSize: 12)
         contentLabel.textColor = .black

@@ -14,6 +14,7 @@ class FavoriteViewController: UIViewController {
     
     private let tableView = UITableView()
     let favoriteImageTableViewCell = FavoriteImageTableViewCell()
+    let detailTextTableViewCell = DetailTextTableViewCell()
 
     
     //MARK: - Properties
@@ -105,6 +106,7 @@ extension FavoriteViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTextTableViewCell.self)")
             if let cell = cell as? DetailTextTableViewCell {
                 cell.text = "Для бариста и посетителей кофеен специальные кружки для кофе — это ещё один способ проконтролировать вкус напитка и приготовить его именно так, как нравится вам. \n \nТеперь, кроме регулировки экстракции, настройки помола, времени заваривания и многоuj что помогает выделять нужные характеристики кофе, вы сможете выбрать и кружку для кофе в зависимости от сорта."
+//                detailTextTableViewCell.contentLabel?.numberOfLines = 1
 //                cell.text = model?.content
             }
             return cell ?? UITableViewCell()
