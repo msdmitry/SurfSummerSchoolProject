@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct PicturesService {
     
@@ -14,9 +15,11 @@ struct PicturesService {
         method: .get,
         path: "picture/")
     
+    let loadingErrorState = UIViewController()
+    
     func loadPictures(_ onResponceWasRecieved: @escaping (_ result: Result<[PicturesResponseModel], Error>) -> Void
     ) {
         dataTask.performRequest(onResponceWasRecieved)
     }
-    
+
 }

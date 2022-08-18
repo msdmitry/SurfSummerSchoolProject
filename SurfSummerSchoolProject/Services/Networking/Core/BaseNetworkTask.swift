@@ -48,8 +48,8 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
                     onResponceWasRecieved(.failure(error))
                 } else if let data = data {
                     do {
-                        let mappedData = try JSONSerialization.jsonObject(with: data) as? [String: Any]
-                        print(mappedData)
+//                        let mappedData = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+//                        print(mappedData)
                         let mappedModel = try JSONDecoder().decode(AbstractOutput.self, from: data)
                         onResponceWasRecieved(.success(mappedModel))
                     } catch {

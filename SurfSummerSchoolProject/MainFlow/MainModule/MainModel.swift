@@ -21,7 +21,7 @@ final class MainModel {
             didItemsUpdated?()
         }
     }
-
+    
     // MARK: - Methods
     func loadPosts() {
         pictureService.loadPictures { [weak self] result in
@@ -37,11 +37,15 @@ final class MainModel {
                     )
                 }
             case .failure(let error):
+                DispatchQueue.main.async {
+                    MainViewController().navigationController?.pushViewController(ErrorViewController(), animated: true)
+                }
+                
                 // TODO: - Implement error state there
-                break
             }
         }
         items = Array(repeating: DetailItemModel.createDefault(), count: 100)
     }
+
 
 }

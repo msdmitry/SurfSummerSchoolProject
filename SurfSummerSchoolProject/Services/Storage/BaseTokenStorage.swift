@@ -10,7 +10,7 @@ import Foundation
 struct BaseTokenStorage: TokenStorage {
     
     func getToken() throws -> TokenContainer {
-        TokenContainer(token: "e69d7e955f8f01daae9e6db18325f29af746794fbc5455e78235feda49383275")
+        TokenContainer(token: "ceee475c1fd17e93151ebfffb2c404e4d8f12e586d679dddececce6d660de5b9")
     }
     
     func set(newToken: TokenContainer) throws { }

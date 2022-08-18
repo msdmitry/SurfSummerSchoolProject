@@ -13,16 +13,7 @@ class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         configureNavigationBar()
 //        navigationController?.interactivePopGestureRecognizer?.delegate = self
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.rightBackSwipe))
-        swipeRecognizer.direction = .down
-        view.addGestureRecognizer(swipeRecognizer)
     }
-    
-    @objc
-    func rightBackSwipe(sender: UISwipeGestureRecognizer) {
-        dismiss(animated: true, completion: nil)
-    }
-    
     
     func configureNavigationBar() {
         navigationItem.title = "Тут будет поиск"

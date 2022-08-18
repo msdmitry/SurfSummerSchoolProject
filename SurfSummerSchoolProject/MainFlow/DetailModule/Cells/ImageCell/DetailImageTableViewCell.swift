@@ -11,7 +11,18 @@ class DetailImageTableViewCell: UITableViewCell {
     
     //MARK: - Views
     
-    @IBOutlet private weak var cartImageView: UIImageView!
+    @IBOutlet weak var cartImageView: UIImageView!
+    
+    //MARK: - UITableViewCell
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        DispatchQueue.main.async {
+            self.selectionStyle = .none
+            self.cartImageView.contentMode = .scaleAspectFill
+            self.cartImageView.layer.cornerRadius = 12
+        }
+    }
     
     //MARK: - Properties
     
@@ -20,17 +31,8 @@ class DetailImageTableViewCell: UITableViewCell {
                 guard let url = URL(string: imageUrlInString) else {
                     return
                 }
-                imageView?.loadImage(from: url)
+                cartImageView?.loadImage(from: url)
             }
         }
-    
-    //MARK: - UITableViewCell
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        selectionStyle = .none
-        cartImageView.layer.cornerRadius = 12
-        cartImageView.contentMode = .scaleAspectFill
-    }
     
 }

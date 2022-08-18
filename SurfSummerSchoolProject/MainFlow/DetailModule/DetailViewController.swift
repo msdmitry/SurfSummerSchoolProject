@@ -8,10 +8,10 @@
 import UIKit
 
 class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
-    
+
     //MARK: - Views
     
-    private let tableView = UITableView()
+    let tableView = UITableView()
     
     //MARK: - Properties
     
@@ -19,13 +19,20 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: - UIViewController
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAppearnce()
+//        tableView.beginUpdates()
     }
-
-
 }
+
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        tableView.endUpdates()
+//    }
+//}
 
 //MARK: - Private Methods
 
@@ -86,8 +93,8 @@ extension DetailViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailImageTableViewCell.self)")
             if let cell = cell as? DetailImageTableViewCell {
-                cell.imageUrlInString = model?.imageUrlInString ?? ""
-            }
+                cell.imageUrlInString = self.model?.imageUrlInString ?? "" 
+                }
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTitleTableViewCell.self)")

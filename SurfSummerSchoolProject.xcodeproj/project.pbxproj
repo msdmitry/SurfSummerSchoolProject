@@ -10,6 +10,9 @@
 		E317245B289A3A1A00517E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317245A289A3A1A00517E1E /* AppDelegate.swift */; };
 		E3172464289A3A2100517E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3172463289A3A2100517E1E /* Assets.xcassets */; };
 		E3172467289A3A2100517E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3172465289A3A2100517E1E /* LaunchScreen.storyboard */; };
+		E328526C28AA587800C2870D /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328526A28AA587800C2870D /* ErrorViewController.swift */; };
+		E328526D28AA587800C2870D /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E328526B28AA587800C2870D /* ErrorViewController.xib */; };
+		E328526F28ACD9D800C2870D /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E328526E28ACD9D700C2870D /* InternetConnectionManager.swift */; };
 		E349D51E289A960000DC3BD6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D51C289A960000DC3BD6 /* MainViewController.swift */; };
 		E349D51F289A960000DC3BD6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E349D51D289A960000DC3BD6 /* MainViewController.xib */; };
 		E349D522289A9B1F00DC3BD6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E349D520289A9B1F00DC3BD6 /* ProfileViewController.swift */; };
@@ -59,6 +62,9 @@
 		E3172463289A3A2100517E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3172466289A3A2100517E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3172468289A3A2100517E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E328526A28AA587800C2870D /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		E328526B28AA587800C2870D /* ErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
+		E328526E28ACD9D700C2870D /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
 		E349D51C289A960000DC3BD6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E349D51D289A960000DC3BD6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		E349D520289A9B1F00DC3BD6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -133,11 +139,20 @@
 			isa = PBXGroup;
 			children = (
 				E317245A289A3A1A00517E1E /* AppDelegate.swift */,
-				E38D668C28A636070049F59A /* Services */,
 				E349D517289A8EBB00DC3BD6 /* Application */,
+				E38D668C28A636070049F59A /* Services */,
 				E349D516289A8EA500DC3BD6 /* MainFlow */,
 			);
 			path = SurfSummerSchoolProject;
+			sourceTree = "<group>";
+		};
+		E328526928AA571300C2870D /* ErrorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E328526A28AA587800C2870D /* ErrorViewController.swift */,
+				E328526B28AA587800C2870D /* ErrorViewController.xib */,
+			);
+			path = ErrorViewController;
 			sourceTree = "<group>";
 		};
 		E349D516289A8EA500DC3BD6 /* MainFlow */ = {
@@ -176,6 +191,7 @@
 		E349D519289A8F4D00DC3BD6 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				E328526928AA571300C2870D /* ErrorViewController */,
 				E3A3AE76289F9A3D006716C8 /* Cells */,
 				E349D51C289A960000DC3BD6 /* MainViewController.swift */,
 				E349D51D289A960000DC3BD6 /* MainViewController.xib */,
@@ -298,6 +314,7 @@
 				E38D669528A64DA50049F59A /* NetworkMethod.swift */,
 				E38D669328A64B130049F59A /* BaseNetworkTask.swift */,
 				E38D66A128A6814D0049F59A /* EmptyModel.swift */,
+				E328526E28ACD9D700C2870D /* InternetConnectionManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -413,6 +430,7 @@
 				E3172464289A3A2100517E1E /* Assets.xcassets in Resources */,
 				E38D667228A157F40049F59A /* DetailTitleTableViewCell.xib in Resources */,
 				E3A3AE7A289F9AFC006716C8 /* MainItemCollectionViewCell.xib in Resources */,
+				E328526D28AA587800C2870D /* ErrorViewController.xib in Resources */,
 				E38D666728A0E5530049F59A /* DetailViewController.xib in Resources */,
 				E38D667628A18C770049F59A /* DetailTextTableViewCell.xib in Resources */,
 				E38D667E28A396D10049F59A /* FavoriteViewController.xib in Resources */,
@@ -435,6 +453,7 @@
 				E38D66A728A684590049F59A /* TokenStorage.swift in Sources */,
 				E38D668228A3D4530049F59A /* FavoriteItemModel.swift in Sources */,
 				E349D51E289A960000DC3BD6 /* MainViewController.swift in Sources */,
+				E328526F28ACD9D800C2870D /* InternetConnectionManager.swift in Sources */,
 				E317245B289A3A1A00517E1E /* AppDelegate.swift in Sources */,
 				E38D66A428A682E70049F59A /* PicturesService.swift in Sources */,
 				E38D669928A678900049F59A /* AuthService.swift in Sources */,
@@ -445,6 +464,7 @@
 				E38D669028A636500049F59A /* NetworkTask.swift in Sources */,
 				E38D666C28A152AE0049F59A /* DetailImageTableViewCell.swift in Sources */,
 				E38D669D28A67A880049F59A /* AuthResponseModel.swift in Sources */,
+				E328526C28AA587800C2870D /* ErrorViewController.swift in Sources */,
 				E38D667D28A396D10049F59A /* FavoriteViewController.swift in Sources */,
 				E349D522289A9B1F00DC3BD6 /* ProfileViewController.swift in Sources */,
 				E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */,
