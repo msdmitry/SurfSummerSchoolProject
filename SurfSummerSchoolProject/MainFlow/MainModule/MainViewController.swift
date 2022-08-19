@@ -40,7 +40,7 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         collectionView.refreshControl = myRefreshControl
         
         let credentials = AuthRequestModel(phone: "+71234567890", password: "qwerty")
-        AuthService().performLoginRequest(credentials: credentials) { result in
+        AuthService().performLoginRequestAndSaveToken(credentials: credentials) { result in
             switch result {
             case .success(let response):
                 print(response)
@@ -89,9 +89,10 @@ extension MainViewController {
 //    }
 
     func configureModel() {
-         model.didItemsUpdated = { [weak self] in
-             DispatchQueue.main.async {
-//           DispatchQueue.main.asyncAfter(deadline: .now() + 5) { - раскомментировать для искусственного замедления, чтобы увидеть спиннер загрузки (UIActivityIndicatorView)
+            model.didItemsUpdated = { [weak self] in
+//             DispatchQueue.main.async {
+             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//               - раскомментировать для искусственного замедления, чтобы увидеть спиннер загрузки (UIActivityIndicatorView)
                  self?.collectionView?.reloadData()
                  self?.activityIndicator?.stopAnimating()
                  self?.activityIndicator?.hidesWhenStopped = true

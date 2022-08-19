@@ -11,6 +11,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tokenStorage: TokenStorage {
+        BaseTokenStorage()
+        }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -19,13 +22,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
         
-        runMainFlow()
+        startApplicationProces()
         
         return true
     }
     
+    //пока не получим новый токен (если старый закончился), будет видно launchScreen
+    func startApplicationProces() {
+        runLaunchScreen()
+        
+        if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
+            runMainFlow()
+        } else {
+            let tempCredentials = AuthRequestModel(phone: "+71234567890", password: "qwerty")
+            AuthService().performLoginRequestAndSaveToken(credentials: tempCredentials) { result in
+                switch result {
+                case .success:
+                    self.runMainFlow()
+                case .failure:
+                    //TODO: - Handle error, if token was not received
+                    break
+                }
+            }
+        }
+    }
+    
     func runMainFlow() {
-        window?.rootViewController = TabBarConfigurator().configure()
+        DispatchQueue.main.async {
+            self.window?.rootViewController = TabBarConfigurator().configure()
+        }
+    }
+    
+    func runLaunchScreen() {
+        let launchScreenViewController = UIStoryboard(name: "LaunchScreen", bundle: .main).instantiateInitialViewController()
+        window?.rootViewController = launchScreenViewController
     }
 
 }

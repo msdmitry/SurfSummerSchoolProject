@@ -105,8 +105,8 @@ extension FavoriteViewController: UITableViewDataSource {
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTextTableViewCell.self)")
             if let cell = cell as? DetailTextTableViewCell {
-                cell.text = "Для бариста и посетителей кофеен специальные кружки для кофе — это ещё один способ проконтролировать вкус напитка и приготовить его именно так, как нравится вам. \n \nТеперь, кроме регулировки экстракции, настройки помола, времени заваривания и многоuj что помогает выделять нужные характеристики кофе, вы сможете выбрать и кружку для кофе в зависимости от сорта."
-//                detailTextTableViewCell.contentLabel?.numberOfLines = 1
+                cell.contentLabel?.numberOfLines = 1
+                cell.text = "Для бариста и посетителей кофеен специальные кружки для кофе — это ещё один способ проконтролировать вкус напитка и приготовить его именно так, как нравится вам. \n \nТеперь, кроме регулировки экстракции, настройки помола, времени заваривания и многого что помогает выделять нужные характеристики кофе, вы сможете выбрать и кружку для кофе в зависимости от сорта."
 //                cell.text = model?.content
             }
             return cell ?? UITableViewCell()

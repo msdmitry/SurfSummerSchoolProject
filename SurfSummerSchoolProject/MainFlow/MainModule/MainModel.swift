@@ -40,11 +40,9 @@ final class MainModel {
                 DispatchQueue.main.async {
                     MainViewController().navigationController?.pushViewController(ErrorViewController(), animated: true)
                 }
-                
-                // TODO: - Implement error state there
+//            try error
             }
         }
-        items = Array(repeating: DetailItemModel.createDefault(), count: 100)
     }
 
 

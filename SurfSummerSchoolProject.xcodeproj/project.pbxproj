@@ -119,6 +119,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E307870A28AF6BE0003BD125 /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				E38D668828A3D5D30049F59A /* FavoriteImageTableViewCell.swift */,
+				E38D668928A3D5D30049F59A /* FavoriteImageTableViewCell.xib */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
 		E317244E289A3A1A00517E1E = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +205,6 @@
 				E349D51C289A960000DC3BD6 /* MainViewController.swift */,
 				E349D51D289A960000DC3BD6 /* MainViewController.xib */,
 				E3A3AE7B289F9D70006716C8 /* MainModel.swift */,
-				E38D667828A19DB40049F59A /* DetailItemModel.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -237,6 +245,7 @@
 				E38D666828A1524C0049F59A /* Cells */,
 				E38D666428A0E5530049F59A /* DetailViewController.swift */,
 				E38D666528A0E5530049F59A /* DetailViewController.xib */,
+				E38D667828A19DB40049F59A /* DetailItemModel.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -281,8 +290,7 @@
 		E38D668728A3D5620049F59A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				E38D668828A3D5D30049F59A /* FavoriteImageTableViewCell.swift */,
-				E38D668928A3D5D30049F59A /* FavoriteImageTableViewCell.xib */,
+				E307870A28AF6BE0003BD125 /* ImageCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

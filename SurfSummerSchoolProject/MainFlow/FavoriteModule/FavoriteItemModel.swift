@@ -10,7 +10,6 @@ import UIKit
 
 struct FavoriteItemModel {
     let image: UIImage?
-//    let image1 = UIImage(named: "korgi")
     let title: String
     var isFavorite: Bool
     let dateCreation: String

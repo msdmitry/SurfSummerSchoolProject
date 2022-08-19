@@ -58,7 +58,7 @@ class MainItemCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Actions
     @IBAction private func favotiteAction(_ sender: UIButton) {
-        didFavoritesTapped?()
+//        didFavoritesTapped?()
         isFavorite.toggle()
     }
 
