@@ -19,20 +19,11 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: - UIViewController
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAppearnce()
-//        tableView.beginUpdates()
     }
 }
-
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        tableView.endUpdates()
-//    }
-//}
 
 //MARK: - Private Methods
 

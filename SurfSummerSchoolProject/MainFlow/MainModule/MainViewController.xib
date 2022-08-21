@@ -31,20 +31,18 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="up2-b5-9z2">
-                    <rect key="frame" x="197" y="435" width="20" height="36"/>
+                    <rect key="frame" x="197" y="443" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="bhR-qi-nBb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="067-qm-YSn"/>
-                <constraint firstItem="up2-b5-9z2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="197" id="2BL-Za-9jW"/>
                 <constraint firstItem="bhR-qi-nBb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Kuj-UN-0vu"/>
                 <constraint firstItem="bhR-qi-nBb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="PtE-sG-7H8"/>
                 <constraint firstItem="bhR-qi-nBb" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="XC7-Db-RMb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="up2-b5-9z2" secondAttribute="bottom" constant="391" id="nz9-6Y-2xd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="up2-b5-9z2" secondAttribute="trailing" constant="197" id="tHk-s5-aZf"/>
-                <constraint firstItem="up2-b5-9z2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="391" id="taL-XV-7mX"/>
+                <constraint firstItem="up2-b5-9z2" firstAttribute="centerX" secondItem="bhR-qi-nBb" secondAttribute="centerX" id="jzv-YA-kdU"/>
+                <constraint firstItem="up2-b5-9z2" firstAttribute="centerY" secondItem="bhR-qi-nBb" secondAttribute="centerY" id="uE5-My-bZK"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>

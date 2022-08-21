@@ -28,7 +28,7 @@ struct DetailItemModel {
         formatter.dateFormat = "dd.MM.yyyy"
 
         self.dateCreation = formatter.string(from: dateCreation)
-    }
+        }
 
     // MARK: - Internal methods
     static func createDefault() -> DetailItemModel {

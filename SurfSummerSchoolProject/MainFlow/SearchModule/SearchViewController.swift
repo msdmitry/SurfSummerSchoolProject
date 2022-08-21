@@ -7,22 +7,26 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UIGestureRecognizerDelegate {
+class SearchViewController: UIViewController {
+    
+    let searchBar = UISearchBar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
-//        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
     
+    
+    
     func configureNavigationBar() {
-        navigationItem.title = "Тут будет поиск"
         let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"),
                                          style: .plain,
                                          target: navigationController,
                                          action: #selector(UINavigationController.popViewController(animated:)))
         navigationItem.leftBarButtonItem = backButton
         backButton.tintColor = .black
+        navigationItem.titleView = searchBar
     }
     
 }
+

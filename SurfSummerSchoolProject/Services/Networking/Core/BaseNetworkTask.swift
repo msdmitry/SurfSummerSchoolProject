@@ -49,7 +49,7 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
             if let cachedResponse = getCachedResponseFromCache(by: request) {
                 let mappedModel = try JSONDecoder().decode(AbstractOutput.self, from: cachedResponse.data)
                 onResponceWasRecieved(.success(mappedModel))
-                
+                print(mappedModel)
                 return
             }
             session.dataTask(with: request) { data, response, error in

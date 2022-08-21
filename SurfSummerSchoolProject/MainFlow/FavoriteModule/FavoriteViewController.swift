@@ -20,8 +20,6 @@ class FavoriteViewController: UIViewController {
     //MARK: - Properties
     
     var model: FavoriteItemModel?
-//    var model2: DetailItemModel?
-    
     
     //MARK: - UIViewController
     

@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //пока не получим новый токен (если старый закончился), будет видно launchScreen
     func startApplicationProces() {
         runLaunchScreen()
+//        runLoginScreen()
         
         if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
             runMainFlow()
@@ -40,8 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .success:
                     self.runMainFlow()
                 case .failure:
-                    //TODO: - Handle error, if token was not received
-                    break
+                    //Handle error, if token was not received
+                    DispatchQueue.main.async {
+                        MainViewController().navigationController?.pushViewController(ErrorViewController(), animated: true)
+                    }
                 }
             }
         }
@@ -56,6 +59,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func runLaunchScreen() {
         let launchScreenViewController = UIStoryboard(name: "LaunchScreen", bundle: .main).instantiateInitialViewController()
         window?.rootViewController = launchScreenViewController
+    }
+    
+    func runLoginScreen() {
+        window?.rootViewController = LoginViewController()
     }
 
 }

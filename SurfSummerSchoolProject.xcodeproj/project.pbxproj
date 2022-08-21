@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E307870F28AFC318003BD125 /* PortraitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E307870D28AFC318003BD125 /* PortraitTableViewCell.swift */; };
+		E307871028AFC318003BD125 /* PortraitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E307870E28AFC318003BD125 /* PortraitTableViewCell.xib */; };
+		E307871728AFC6A6003BD125 /* CityPhoneEmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E307871528AFC6A6003BD125 /* CityPhoneEmailTableViewCell.swift */; };
+		E307871828AFC6A6003BD125 /* CityPhoneEmailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E307871628AFC6A6003BD125 /* CityPhoneEmailTableViewCell.xib */; };
+		E307871E28AFCB66003BD125 /* ProfileItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E307871D28AFCB65003BD125 /* ProfileItemModel.swift */; };
+		E307872228B2B2BC003BD125 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E307872028B2B2BB003BD125 /* LoginViewController.swift */; };
+		E307872328B2B2BC003BD125 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E307872128B2B2BB003BD125 /* LoginViewController.xib */; };
 		E317245B289A3A1A00517E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E317245A289A3A1A00517E1E /* AppDelegate.swift */; };
 		E3172464289A3A2100517E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3172463289A3A2100517E1E /* Assets.xcassets */; };
 		E3172467289A3A2100517E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3172465289A3A2100517E1E /* LaunchScreen.storyboard */; };
@@ -57,6 +64,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E307870D28AFC318003BD125 /* PortraitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitTableViewCell.swift; sourceTree = "<group>"; };
+		E307870E28AFC318003BD125 /* PortraitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortraitTableViewCell.xib; sourceTree = "<group>"; };
+		E307871528AFC6A6003BD125 /* CityPhoneEmailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPhoneEmailTableViewCell.swift; sourceTree = "<group>"; };
+		E307871628AFC6A6003BD125 /* CityPhoneEmailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityPhoneEmailTableViewCell.xib; sourceTree = "<group>"; };
+		E307871D28AFCB65003BD125 /* ProfileItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileItemModel.swift; sourceTree = "<group>"; };
+		E307872028B2B2BB003BD125 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E307872128B2B2BB003BD125 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E3172457289A3A1A00517E1E /* SurfSummerSchoolProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfSummerSchoolProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E317245A289A3A1A00517E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3172463289A3A2100517E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +142,42 @@
 			path = ImageCell;
 			sourceTree = "<group>";
 		};
+		E307870C28AFC2D2003BD125 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E307871128AFC327003BD125 /* PortraitCell */,
+				E307871228AFC342003BD125 /* CityPhoneEmailCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E307871128AFC327003BD125 /* PortraitCell */ = {
+			isa = PBXGroup;
+			children = (
+				E307870D28AFC318003BD125 /* PortraitTableViewCell.swift */,
+				E307870E28AFC318003BD125 /* PortraitTableViewCell.xib */,
+			);
+			path = PortraitCell;
+			sourceTree = "<group>";
+		};
+		E307871228AFC342003BD125 /* CityPhoneEmailCell */ = {
+			isa = PBXGroup;
+			children = (
+				E307871528AFC6A6003BD125 /* CityPhoneEmailTableViewCell.swift */,
+				E307871628AFC6A6003BD125 /* CityPhoneEmailTableViewCell.xib */,
+			);
+			path = CityPhoneEmailCell;
+			sourceTree = "<group>";
+		};
+		E307871F28B2B08E003BD125 /* LoginModule */ = {
+			isa = PBXGroup;
+			children = (
+				E307872028B2B2BB003BD125 /* LoginViewController.swift */,
+				E307872128B2B2BB003BD125 /* LoginViewController.xib */,
+			);
+			path = LoginModule;
+			sourceTree = "<group>";
+		};
 		E317244E289A3A1A00517E1E = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +217,7 @@
 		E349D516289A8EA500DC3BD6 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				E307871F28B2B08E003BD125 /* LoginModule */,
 				E38D666328A0E5140049F59A /* DetailModule */,
 				E38D665B289FDD7D0049F59A /* SearchModule */,
 				E349D518289A8F4500DC3BD6 /* NavigationBar+TabBar */,
@@ -212,8 +263,10 @@
 		E349D51A289A8F5600DC3BD6 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				E307870C28AFC2D2003BD125 /* Cells */,
 				E349D520289A9B1F00DC3BD6 /* ProfileViewController.swift */,
 				E349D521289A9B1F00DC3BD6 /* ProfileViewController.xib */,
+				E307871D28AFCB65003BD125 /* ProfileItemModel.swift */,
 			);
 			path = ProfileModule;
 			sourceTree = "<group>";
@@ -432,8 +485,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E307872328B2B2BC003BD125 /* LoginViewController.xib in Resources */,
 				E3172467289A3A2100517E1E /* LaunchScreen.storyboard in Resources */,
 				E38D668B28A3D5D30049F59A /* FavoriteImageTableViewCell.xib in Resources */,
+				E307871028AFC318003BD125 /* PortraitTableViewCell.xib in Resources */,
 				E38D666D28A152AE0049F59A /* DetailImageTableViewCell.xib in Resources */,
 				E3172464289A3A2100517E1E /* Assets.xcassets in Resources */,
 				E38D667228A157F40049F59A /* DetailTitleTableViewCell.xib in Resources */,
@@ -441,6 +496,7 @@
 				E328526D28AA587800C2870D /* ErrorViewController.xib in Resources */,
 				E38D666728A0E5530049F59A /* DetailViewController.xib in Resources */,
 				E38D667628A18C770049F59A /* DetailTextTableViewCell.xib in Resources */,
+				E307871828AFC6A6003BD125 /* CityPhoneEmailTableViewCell.xib in Resources */,
 				E38D667E28A396D10049F59A /* FavoriteViewController.xib in Resources */,
 				E349D523289A9B1F00DC3BD6 /* ProfileViewController.xib in Resources */,
 				E349D51F289A960000DC3BD6 /* MainViewController.xib in Resources */,
@@ -459,6 +515,7 @@
 				E38D669B28A679840049F59A /* AuthRequestModel.swift in Sources */,
 				E38D665E289FDDED0049F59A /* SearchViewController.swift in Sources */,
 				E38D66A728A684590049F59A /* TokenStorage.swift in Sources */,
+				E307872228B2B2BC003BD125 /* LoginViewController.swift in Sources */,
 				E38D668228A3D4530049F59A /* FavoriteItemModel.swift in Sources */,
 				E349D51E289A960000DC3BD6 /* MainViewController.swift in Sources */,
 				E328526F28ACD9D800C2870D /* InternetConnectionManager.swift in Sources */,
@@ -470,11 +527,14 @@
 				E38D668A28A3D5D30049F59A /* FavoriteImageTableViewCell.swift in Sources */,
 				E38D66A028A680EB0049F59A /* PictureResponseModel.swift in Sources */,
 				E38D669028A636500049F59A /* NetworkTask.swift in Sources */,
+				E307871E28AFCB66003BD125 /* ProfileItemModel.swift in Sources */,
 				E38D666C28A152AE0049F59A /* DetailImageTableViewCell.swift in Sources */,
 				E38D669D28A67A880049F59A /* AuthResponseModel.swift in Sources */,
 				E328526C28AA587800C2870D /* ErrorViewController.swift in Sources */,
+				E307871728AFC6A6003BD125 /* CityPhoneEmailTableViewCell.swift in Sources */,
 				E38D667D28A396D10049F59A /* FavoriteViewController.swift in Sources */,
 				E349D522289A9B1F00DC3BD6 /* ProfileViewController.swift in Sources */,
+				E307870F28AFC318003BD125 /* PortraitTableViewCell.swift in Sources */,
 				E349D529289A9C7100DC3BD6 /* TabBarModel.swift in Sources */,
 				E38D66A228A6814D0049F59A /* EmptyModel.swift in Sources */,
 				E38D66AB28A684DD0049F59A /* BaseTokenStorage.swift in Sources */,

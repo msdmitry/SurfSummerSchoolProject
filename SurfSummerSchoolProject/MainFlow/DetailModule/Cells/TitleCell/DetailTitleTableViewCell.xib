@@ -31,9 +31,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="vda-g2-kIY" secondAttribute="bottom" id="9Sa-h6-E6O"/>
-                    <constraint firstItem="vda-g2-kIY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HSB-0k-KId"/>
+                    <constraint firstItem="jdG-cf-aBS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vda-g2-kIY" secondAttribute="trailing" constant="8" id="EZV-Du-JFk"/>
+                    <constraint firstItem="vda-g2-kIY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="999" constant="8" id="HSB-0k-KId"/>
                     <constraint firstItem="vda-g2-kIY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="JaZ-tr-SV9"/>
-                    <constraint firstItem="jdG-cf-aBS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vda-g2-kIY" secondAttribute="trailing" constant="8" id="Pmh-iM-6Lm"/>
                     <constraint firstItem="jdG-cf-aBS" firstAttribute="centerY" secondItem="vda-g2-kIY" secondAttribute="centerY" id="gCI-Az-yx2"/>
                     <constraint firstAttribute="trailing" secondItem="jdG-cf-aBS" secondAttribute="trailing" constant="16" id="nas-RG-UTi"/>
                 </constraints>

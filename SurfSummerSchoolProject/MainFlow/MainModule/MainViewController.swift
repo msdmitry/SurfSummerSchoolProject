@@ -51,9 +51,9 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 print(error)
             }
         }
-        PicturesService().loadPictures { result in
-            print(result)
-        }
+//        PicturesService().loadPictures { result in
+//            print(result)
+//        }
     }
 
 }
@@ -132,7 +132,7 @@ extension MainViewController {
             print("Connected")
         } else {
             self.navigationController?.pushViewController(ErrorViewController(), animated: true)
-            print("Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected Not Connected")
+            print("Not Connected")
         }
     }
     
