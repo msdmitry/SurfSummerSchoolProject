@@ -13,7 +13,7 @@ import SystemConfiguration
 //проверка соединения с интернетом, листать до версии Swift 5+, вызов метода искать там же https://stackoverflow.com/questions/30743408/check-for-internet-connection-with-swift
 
 public class InternetConnectionManager {
-
+    
     private init() {
         
     }

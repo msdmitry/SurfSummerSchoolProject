@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     let searchBar = UISearchBar()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()

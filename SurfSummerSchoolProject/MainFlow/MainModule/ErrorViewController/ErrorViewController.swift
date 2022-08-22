@@ -8,15 +8,15 @@
 import UIKit
 
 class ErrorViewController: UIViewController {
-
-
+    
+    
     @IBOutlet weak var errorMessageLabel: UILabel!
     @IBOutlet weak var reloadButtonLabel: UIButton!
     
     @IBAction func reloadButton(_ sender: UIButton) {
         navigationController?.pushViewController(MainViewController(), animated: true)
         MainViewController().handleRefresh()
-        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,24 +36,16 @@ class ErrorViewController: UIViewController {
         errorMessageLabel.text = "Не удалось загрузить ленту \nОбновите экран или попробуйте позже"
         errorMessageLabel.font = UIFont(name: "SFProText-Regular", size: 14)
         errorMessageLabel.textColor = UIColor(named: "textLabelsColor")
-
+        
     }
     
     func configureNavigationBar() {
         navigationItem.title = "Главная"
         navigationItem.hidesBackButton = true
-//
-//        let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"),
-//                                         style: .plain,
-//                                         target: navigationController,
-//                                         action:
-//                                            #selector(UINavigationController.popViewController(animated:)))
-//            navigationItem.leftBarButtonItem = backButton
-//            backButton.tintColor = .black
         
         let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
-            navigationItem.rightBarButtonItem = searchButton
-            searchButton.tintColor = .black
+        navigationItem.rightBarButtonItem = searchButton
+        searchButton.tintColor = .black
     }
     
     @objc
@@ -69,5 +61,5 @@ class ErrorViewController: UIViewController {
             }
         }
     }
-
+    
 }

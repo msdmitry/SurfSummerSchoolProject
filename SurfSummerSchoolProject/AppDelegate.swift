@@ -27,10 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    //пока не получим новый токен (если старый закончился), будет видно launchScreen
     func startApplicationProces() {
         runLaunchScreen()
-//        runLoginScreen()
         
         if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
             runMainFlow()
@@ -41,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .success:
                     self.runMainFlow()
                 case .failure:
-                    //Handle error, if token was not received
+                    //Handle error, if token wasn't received
                     DispatchQueue.main.async {
                         MainViewController().navigationController?.pushViewController(ErrorViewController(), animated: true)
                     }

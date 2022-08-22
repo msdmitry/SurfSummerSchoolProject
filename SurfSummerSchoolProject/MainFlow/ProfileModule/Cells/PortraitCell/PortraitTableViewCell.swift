@@ -29,8 +29,8 @@ class PortraitTableViewCell: UITableViewCell {
     func configureAppearence() {
         selectionStyle = .none
         DispatchQueue.main.async {
-        self.userPortraitImage.contentMode = .scaleAspectFill
-        self.userPortraitImage.layer.cornerRadius = 12
+            self.userPortraitImage.contentMode = .scaleAspectFill
+            self.userPortraitImage.layer.cornerRadius = 12
         }
     }
     
@@ -45,7 +45,6 @@ class PortraitTableViewCell: UITableViewCell {
     func confugureUserStatusLabel() {
         userStatusLabel.font = .systemFont(ofSize: 12, weight: .light)
         userStatusLabel.numberOfLines = 0
-//        userStatusLabel.font = UIFont(name: "SFProText", size: 25)
         userStatusLabel.textColor = UIColor(red: 0.702, green: 0.702, blue: 0.702, alpha: 1)
     }
     
@@ -73,6 +72,6 @@ class PortraitTableViewCell: UITableViewCell {
             userStatusLabel.text = about
         }
     }
-
-
+    
+    
 }

@@ -14,7 +14,7 @@ struct FavoriteItemModel {
     var isFavorite: Bool
     let dateCreation: String
     let content: String
-
+    
     static func createDefault() -> FavoriteItemModel {
         .init(
             image: UIImage(named: "korgi"),

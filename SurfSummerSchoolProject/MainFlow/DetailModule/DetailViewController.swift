@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
-
+class DetailViewController: UIViewController {
+    
     //MARK: - Views
     
     let tableView = UITableView()
@@ -41,11 +41,10 @@ private extension DetailViewController {
                                          target: navigationController,
                                          action: #selector(UINavigationController.popViewController(animated:)))
         navigationItem.leftBarButtonItem = backButton
-            backButton.tintColor = .black
+        backButton.tintColor = .black
         let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
         navigationItem.rightBarButtonItem = searchButton
-            searchButton.tintColor = .black
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
+        searchButton.tintColor = .black
     }
     
     @objc func callSearchViewController() {
@@ -55,14 +54,13 @@ private extension DetailViewController {
     
     func configureTableView() {
         view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false //прописываем всегда при создании вью из кода
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        //регистрируем ячейки
         tableView.register(UINib(nibName: "\(DetailImageTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailImageTableViewCell.self)")
         tableView.register(UINib(nibName: "\(DetailTitleTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailTitleTableViewCell.self)")
         tableView.register(UINib(nibName: "\(DetailTextTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(DetailTextTableViewCell.self)")
@@ -85,7 +83,7 @@ extension DetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailImageTableViewCell.self)")
             if let cell = cell as? DetailImageTableViewCell {
                 cell.imageUrlInString = self.model?.imageUrlInString ?? "" 
-                }
+            }
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTitleTableViewCell.self)")

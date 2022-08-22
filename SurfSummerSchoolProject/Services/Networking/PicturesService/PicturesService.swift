@@ -21,5 +21,5 @@ struct PicturesService {
     ) {
         dataTask.performRequest(onResponceWasRecieved)
     }
-
+    
 }

@@ -8,21 +8,21 @@
 import UIKit
 
 class MainItemCollectionViewCell: UICollectionViewCell {
-
+    
     // MARK: - Constants
     private enum Constants {
         static let fillHeartImage = UIImage(named: "hearth-full")
         static let heartImage = UIImage(named: "hearth-empty")
     }
-
+    
     // MARK: - Views
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var favoriteButton: UIButton!
-
+    
     // MARK: - Events
     var didFavoritesTapped: (() -> Void)?
-
+    
     // MARK: - Calculated
     var buttonImage: UIImage? {
         return isFavorite ? Constants.fillHeartImage : Constants.heartImage
@@ -30,12 +30,16 @@ class MainItemCollectionViewCell: UICollectionViewCell {
     
     override var isHighlighted: Bool {
         didSet {
-            UIView.animate(withDuration: 0.2) {
-                self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
-            }
+            makeCollectionCellSmallerWhenTapping()
         }
     }
-
+    
+    func makeCollectionCellSmallerWhenTapping() {
+        UIView.animate(withDuration: 0.2) {
+            self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
+        }
+    }
+    
     // MARK: - Properties
     var title: String = "" {
         didSet {
@@ -55,32 +59,31 @@ class MainItemCollectionViewCell: UICollectionViewCell {
             favoriteButton.setImage(buttonImage, for: .normal)
         }
     }
-
+    
     // MARK: - Actions
     @IBAction private func favotiteAction(_ sender: UIButton) {
-//        didFavoritesTapped?()
         isFavorite.toggle()
     }
-
+    
     // MARK: - UICollectionViewCell
     override func awakeFromNib() {
         super.awakeFromNib()
         configureAppearance()
     }
-
+    
 }
 
 // MARK: - Private Methods
 private extension MainItemCollectionViewCell {
-
+    
     func configureAppearance() {
         titleLabel.textColor = .black
         titleLabel.font = .systemFont(ofSize: 12)
-
+        
         imageView.layer.cornerRadius = 12
-
+        
         favoriteButton.tintColor = .white
         isFavorite = false
     }
-
+    
 }

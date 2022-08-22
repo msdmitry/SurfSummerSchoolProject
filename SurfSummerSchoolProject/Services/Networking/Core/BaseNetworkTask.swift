@@ -8,7 +8,7 @@
 import Foundation
 
 struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: NetworkTask {    
-
+    
     //MARK: - NetworkTask
     
     typealias Input = AbstractInput
@@ -100,7 +100,7 @@ private extension BaseNetworkTask {
         
         let cachedUrlRepsonse = CachedURLResponse(response: response, data: cachedData)
         urlCache.storeCachedResponse(cachedUrlRepsonse, for: request)
-
+        
     }
     
 }
@@ -120,7 +120,7 @@ private extension BaseNetworkTask {
         guard let url = completedURL else {
             throw NetworkTaskError.urlWasNotFound
         }
-                
+        
         var request: URLRequest
         switch method {
         case .get:

@@ -7,18 +7,15 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIGestureRecognizerDelegate {
-
+class ProfileViewController: UIViewController {
+    
     //MARK: - Views
     
-    
-
-
     @IBOutlet weak var logoutButtonConfigurator: UIButton!
     @IBOutlet weak var tableView: UITableView!
-//        let tableView = UITableView()
     
     @IBAction func logoutButton(_ sender: UIButton) {
+        
     }
     
     //MARK: - Properties
@@ -45,19 +42,9 @@ private extension ProfileViewController {
     }
     
     func configureTableView() {
-//        view.addSubview(tableView)
-//        tableView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-//            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-//            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-//            tableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: 200)
-//        ])
-        //регистрируем ячейки
         tableView.register(UINib(nibName: "\(PortraitTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(PortraitTableViewCell.self)")
         tableView.register(UINib(nibName: "\(CityPhoneEmailTableViewCell.self)", bundle: .main), forCellReuseIdentifier: "\(CityPhoneEmailTableViewCell.self)")
         tableView.dataSource = self
-//        tableView.separatorStyle = .
     }
     
     func configureButton() {
@@ -70,7 +57,6 @@ private extension ProfileViewController {
     
     func configureNavigationBar() {
         navigationItem.title = "Профиль"
-        navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
 }
 
@@ -88,31 +74,31 @@ extension ProfileViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(PortraitTableViewCell.self)")
             if let cell = cell as? PortraitTableViewCell {
                 cell.avatar = self.model.userPortrait
-                cell.firstName = self.model.userName ?? ""
-                cell.lastName = model.userSurname ?? ""
-                cell.about = self.model.userStatus ?? ""
-                }
+                cell.firstName = self.model.userName
+                cell.lastName = model.userSurname
+                cell.about = self.model.userStatus
+            }
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(CityPhoneEmailTableViewCell.self)")
             if let cell = cell as? CityPhoneEmailTableViewCell {
                 cell.headingName = "Город"
-                cell.subheadingName = model.userCity ?? ""
+                cell.subheadingName = model.userCity
             }
             return cell ?? UITableViewCell()
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(CityPhoneEmailTableViewCell.self)")
             if let cell = cell as? CityPhoneEmailTableViewCell {
                 cell.headingName = "Телефон"
-                cell.subheadingName = model.userPhone ?? ""
+                cell.subheadingName = model.userPhone
             }
             return cell ?? UITableViewCell()
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(CityPhoneEmailTableViewCell.self)")
             if let cell = cell as? CityPhoneEmailTableViewCell {
                 cell.headingName = "Почта"
-                cell.subheadingName = model.userEmail ?? ""
-                }
+                cell.subheadingName = model.userEmail
+            }
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
@@ -121,8 +107,8 @@ extension ProfileViewController: UITableViewDataSource {
     
     
 }
-    
 
 
 
-        
+
+

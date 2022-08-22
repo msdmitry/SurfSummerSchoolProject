@@ -9,7 +9,7 @@ import UIKit
 import Network
 
 final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    
     // MARK: - Constants
     
     private enum Constants {
@@ -17,11 +17,11 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         static let spaceBetweenElements: CGFloat = 7
         static let spaceBetweenRows: CGFloat = 8
     }
-
+    
     // MARK: - Private Properties
     
     private let model: MainModel = .init()
-
+    
     // MARK: - Views
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -51,11 +51,8 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 print(error)
             }
         }
-//        PicturesService().loadPictures { result in
-//            print(result)
-//        }
     }
-
+    
 }
 
 // MARK: - Private Methods
@@ -63,42 +60,32 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 extension MainViewController {
     
     func configureApperance() {
+        configureNavigationBar()
         activityIndicator?.startAnimating()
         configureCollection()
         configureModel()
-        configureNavigationBar()
         model.loadPosts()
-//        model.items[5].isFavorite = true
     }
     
     func configureCollection() {
         collectionView?.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main),
-                                forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
+                                 forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView?.dataSource = self
         collectionView?.delegate = self
         collectionView?.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
-        
-//        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.rightBackSwipe))
-//        swipeRecognizer.direction = .right
-//        view.addGestureRecognizer(swipeRecognizer)
     }
     
-//    @objc
-//    func rightBackSwipe(sender: UISwipeGestureRecognizer) {
-//        dismiss(animated: true, completion: nil)
-//    }
-
     func configureModel() {
-            model.didItemsUpdated = { [weak self] in
-//             DispatchQueue.main.async {
-             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//               - раскомментировать для искусственного замедления, чтобы увидеть спиннер загрузки (UIActivityIndicatorView)
-                 self?.collectionView?.reloadData()
-                 self?.activityIndicator?.stopAnimating()
-                 self?.activityIndicator?.hidesWhenStopped = true
-             }
-         }
-     }
+        model.didItemsUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                //             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                //               - раскомментировать для искусственного замедления, чтобы увидеть спиннер загрузки (UIActivityIndicatorView)
+                self?.collectionView?.reloadData()
+                self?.activityIndicator?.stopAnimating()
+                self?.activityIndicator?.hidesWhenStopped = true
+            }
+        }
+    }
     
     func configureNavigationBar() {
         navigationItem.leftBarButtonItem = nil
@@ -109,13 +96,13 @@ extension MainViewController {
         searchButton.tintColor = .black
         navigationController?.interactivePopGestureRecognizer?.delegate = self
     }
-    
+
     @objc
     func callSearchViewController() {
         let searchVC = SearchViewController()
         navigationController?.pushViewController(searchVC, animated: true)
     }
-     
+    
     @objc
     func handleRefresh() {
         Timer.scheduledTimer(withTimeInterval: 0.7, repeats: false) { (timer) in
@@ -140,17 +127,17 @@ extension MainViewController {
         let errorVC = ErrorViewController()
         navigationController?.pushViewController(errorVC, animated: true)
     }
-
+    
 }
 
 // MARK: - UICollection
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.items.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(MainItemCollectionViewCell.self)", for: indexPath)
         if let cell = cell as? MainItemCollectionViewCell {
@@ -164,16 +151,17 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemWidth = (view.frame.width - Constants.horisontalInset * 2 - Constants.spaceBetweenElements) / 2
-        return CGSize(width: itemWidth, height: 1.46 * itemWidth)
+        let multiplierForOptimalHeightCalculating = 1.46
+        return CGSize(width: itemWidth, height: multiplierForOptimalHeightCalculating * itemWidth)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.spaceBetweenRows
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.spaceBetweenElements
     }

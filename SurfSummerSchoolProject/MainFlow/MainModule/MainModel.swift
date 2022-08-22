@@ -10,10 +10,10 @@ import UIKit
 
 
 final class MainModel {
-
+    
     // MARK: - Events
     var didItemsUpdated: (() -> Void)?
-
+    
     // MARK: - Properties
     let pictureService = PicturesService()
     var items: [DetailItemModel] = [] {
@@ -36,14 +36,13 @@ final class MainModel {
                         dateCreation: pictureModel.date
                     )
                 }
-            case .failure(let error):
+            case .failure(_):
                 DispatchQueue.main.async {
                     MainViewController().navigationController?.pushViewController(ErrorViewController(), animated: true)
                 }
-//            try error
             }
         }
     }
-
-
+    
+    
 }

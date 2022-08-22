@@ -15,7 +15,7 @@ class FavoriteImageTableViewCell: UITableViewCell {
         static let fillHeartImage = UIImage(named: "hearth-full")
         static let heartImage = UIImage(named: "hearth-empty")
     }
-     
+    
     //MARK: - Views
     
     @IBOutlet weak var favoriteButton: UIButton!
@@ -59,18 +59,18 @@ class FavoriteImageTableViewCell: UITableViewCell {
     }
     
 }
-    
-    //MARK: - Private Methods
-    
+
+//MARK: - Private Methods
+
 private extension FavoriteImageTableViewCell {
-        
-        func configureAppearance() {
-            favoriteCartImageView.image = UIImage(named: "korgi")
-            favoriteCartImageView.contentMode = .scaleAspectFill
-            favoriteCartImageView.layer.cornerRadius = 12
-            favoriteButton.tintColor = .white
-            isFavorite = false
-        }
-    }
     
+    func configureAppearance() {
+        favoriteCartImageView.image = UIImage(named: "korgi")
+        favoriteCartImageView.contentMode = .scaleAspectFill
+        favoriteCartImageView.layer.cornerRadius = 12
+        favoriteButton.tintColor = .white
+        isFavorite = false
+    }
+}
+
 

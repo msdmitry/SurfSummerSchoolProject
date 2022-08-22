@@ -27,12 +27,12 @@ class DetailImageTableViewCell: UITableViewCell {
     //MARK: - Properties
     
     var imageUrlInString: String = "" {
-            didSet {
-                guard let url = URL(string: imageUrlInString) else {
-                    return
-                }
-                cartImageView?.loadImage(from: url)
+        didSet {
+            guard let url = URL(string: imageUrlInString) else {
+                return
             }
+            cartImageView?.loadImage(from: url)
         }
+    }
     
 }

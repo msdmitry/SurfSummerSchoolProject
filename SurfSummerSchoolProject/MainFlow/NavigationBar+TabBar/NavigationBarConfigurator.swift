@@ -10,25 +10,23 @@ import UIKit
 
 
 class NavigationBarConfigurator: UINavigationController {
-
-func getNavigationController(rootViewController: UIViewController) -> UIViewController {
     
-    let navigationController = UINavigationController(rootViewController: rootViewController)
-    let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
-    
-    
-    searchButton.tintColor = .black
-
-    
-    let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"), style: .plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
-    backButton.tintColor = .black
-    
-    navigationController.navigationBar.topItem?.rightBarButtonItem = searchButton
-    navigationController.navigationBar.topItem?.leftBarButtonItem = backButton
-    //    navigationController.navigationBar.topItem?.title = "Главная"
+    func getNavigationController(rootViewController: UIViewController) -> UIViewController {
         
-    return navigationController
-}
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
+        
+        
+        searchButton.tintColor = .black
+        
+        
+        let backButton = UIBarButtonItem(image: UIImage(named: "back-arrow"), style: .plain, target: navigationController, action: #selector(UINavigationController.popViewController(animated:)))
+        backButton.tintColor = .black
+        
+        navigationController.navigationBar.topItem?.rightBarButtonItem = searchButton
+        navigationController.navigationBar.topItem?.leftBarButtonItem = backButton
+        return navigationController
+    }
     
     @objc func callSearchViewController() {
         let searchVC = SearchViewController()

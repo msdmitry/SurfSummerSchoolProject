@@ -34,14 +34,12 @@ class DetailTitleTableViewCell: UITableViewCell {
         super.awakeFromNib()
         configureAppearance()
     }
-
+    
     private func configureAppearance() {
-        //строка ниже нужна чтобы предотвратить появление лишних анимаций для нажимаемых элементов
         selectionStyle = .none
         cartTitleLabel.font = .systemFont(ofSize: 16, weight: .medium)
         dateLabel.font = .systemFont(ofSize: 10)
-        //ниже пример того, как можно задавать цвет по дизайну (но лучше заносить в ассеты)
-        dateLabel.textColor = UIColor(displayP3Red: 0xB3 / 255, green: 0xB3 / 255, blue: 0xB3 / 255, alpha: 1)
+        dateLabel.textColor = UIColor(named: "textLabelsColor")
     }
     
 }

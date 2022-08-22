@@ -8,14 +8,14 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
-
+    
     
     //MARK: - Views
     
     private let tableView = UITableView()
     let favoriteImageTableViewCell = FavoriteImageTableViewCell()
     let detailTextTableViewCell = DetailTextTableViewCell()
-
+    
     
     //MARK: - Properties
     
@@ -27,11 +27,11 @@ class FavoriteViewController: UIViewController {
         super.viewDidLoad()
         configureAppearnce()
     }
-
-
+    
+    
 }
 
-    //MARK: - Private Methods
+//MARK: - Private Methods
 
 private extension FavoriteViewController {
     
@@ -43,10 +43,9 @@ private extension FavoriteViewController {
     func configureNavigationBar() {
         navigationItem.leftBarButtonItem = nil
         navigationItem.title = "Избранное"
-//        navigationItem.title = model?.title
         let searchButton = UIBarButtonItem(image: UIImage(named: "searchButton"), style: .plain, target: self, action: #selector(callSearchViewController))
         navigationItem.rightBarButtonItem = searchButton
-            searchButton.tintColor = .black
+        searchButton.tintColor = .black
     }
     
     @objc
@@ -87,8 +86,7 @@ extension FavoriteViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(FavoriteImageTableViewCell.self)")
             if cell is FavoriteImageTableViewCell {
-//                cell.image = model?.image
-            favoriteImageTableViewCell.image = model?.image
+                favoriteImageTableViewCell.image = model?.image
             }
             return cell ?? UITableViewCell()
         case 1:
@@ -96,8 +94,6 @@ extension FavoriteViewController: UITableViewDataSource {
             if let cell = cell as? DetailTitleTableViewCell {
                 cell.title = "Самый милый корги"
                 cell.date = "12.05.2022"
-//                cell.title = model?.title ?? ""
-//                cell.date = model?.dateCreation ?? ""
             }
             return cell ?? UITableViewCell()
         case 2:
@@ -105,14 +101,12 @@ extension FavoriteViewController: UITableViewDataSource {
             if let cell = cell as? DetailTextTableViewCell {
                 cell.contentLabel?.numberOfLines = 1
                 cell.text = "Для бариста и посетителей кофеен специальные кружки для кофе — это ещё один способ проконтролировать вкус напитка и приготовить его именно так, как нравится вам. \n \nТеперь, кроме регулировки экстракции, настройки помола, времени заваривания и многого что помогает выделять нужные характеристики кофе, вы сможете выбрать и кружку для кофе в зависимости от сорта."
-//                cell.text = model?.content
             }
             return cell ?? UITableViewCell()
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(FavoriteImageTableViewCell.self)")
             if cell is FavoriteImageTableViewCell {
-//                cell.image = model?.image
-            favoriteImageTableViewCell.image = model?.image
+                favoriteImageTableViewCell.image = model?.image
             }
             return cell ?? UITableViewCell()
         case 4:
@@ -120,21 +114,18 @@ extension FavoriteViewController: UITableViewDataSource {
             if let cell = cell as? DetailTitleTableViewCell {
                 cell.title = "Самый милый корги"
                 cell.date = "12.05.2022"
-//                cell.title = model?.title ?? ""
-//                cell.date = model?.dateCreation ?? ""
             }
             return cell ?? UITableViewCell()
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTextTableViewCell.self)")
             if let cell = cell as? DetailTextTableViewCell {
                 cell.text = "Для бариста и посетителей кофеен специальные кружки для кофе — это ещё один способ проконтролировать вкус напитка и приготовить его именно так, как нравится вам. \n \nТеперь, кроме регулировки экстракции, настройки помола, времени заваривания и многого что помогает выделять нужные характеристики кофе, вы сможете выбрать и кружку для кофе в зависимости от сорта."
-//                cell.text = model?.content
             }
             return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
         }
-
+        
     }
-
+    
 }

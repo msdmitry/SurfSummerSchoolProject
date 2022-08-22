@@ -42,23 +42,17 @@ struct BaseTokenStorage: TokenStorage {
         guard let data = tokenInResult as? Data else {
             throw Error.tokenWasNotFoundInKeyChainOrCantRepresentUsData
         }
-
-        //??? - можно было декодировать TokenContainer вместе с датой и не хранить в UserDefaults
+        
         let retrivingToken = try JSONDecoder().decode(String.self, from: data)
         let tokenSavingDate = try getSavingTokenDate()
         
         return TokenContainer(token: retrivingToken, receivingDate: tokenSavingDate)
         
-//        старый код, где вручную вписывали токен:
-//        return TokenContainer(
-//            token: "fc1aeeeb7eb1ff4650cc3b80fbb034ab4054daa33bbacfc428e90a3a138fff7f",
-//            receivingDate: Date().addingTimeInterval(-40000)
-//        )
     }
     
     func set(newToken: TokenContainer) throws {
         try removeTokenFromContainer()
-
+        
         let tokenInData = try JSONEncoder().encode(newToken.token)
         let queryDictionaryForSavingToken: [CFString: AnyObject] = [
             kSecAttrService: Constants.applicationNameInKeyChain as AnyObject,
