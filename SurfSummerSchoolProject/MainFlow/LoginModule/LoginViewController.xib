@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
+            <connections>
+                <outlet property="loginLabel" destination="M2K-Nb-h9g" id="QCN-W9-kTO"/>
+                <outlet property="passwordLabel" destination="iCd-QI-pQc" id="ld0-aB-PBn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OZ-Jb-2k7">
+                    <rect key="frame" x="16" y="218" width="382" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="POw-gB-eoj"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Войти">
+                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="loginButton:" destination="-1" eventType="touchUpInside" id="5dr-Sr-SKZ"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Логин" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2K-Nb-h9g">
+                    <rect key="frame" x="16" y="60" width="382" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="oNj-6n-bsd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="   Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-QI-pQc">
+                    <rect key="frame" x="16" y="131" width="382" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="FM4-54-gGd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="M2K-Nb-h9g" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9EA-dM-ZrQ"/>
+                <constraint firstItem="iCd-QI-pQc" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9kj-L2-Otw"/>
+                <constraint firstItem="6OZ-Jb-2k7" firstAttribute="top" secondItem="iCd-QI-pQc" secondAttribute="bottom" constant="32" id="NKc-k6-cYt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iCd-QI-pQc" secondAttribute="trailing" constant="16" id="RY2-vR-9cK"/>
+                <constraint firstItem="M2K-Nb-h9g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="TIy-j1-hhE"/>
+                <constraint firstItem="iCd-QI-pQc" firstAttribute="top" secondItem="M2K-Nb-h9g" secondAttribute="bottom" constant="16" id="h90-wN-v1q"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="M2K-Nb-h9g" secondAttribute="trailing" constant="16" id="l0x-ZD-lRK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6OZ-Jb-2k7" secondAttribute="trailing" constant="16" id="sA4-rH-bq3"/>
+                <constraint firstItem="6OZ-Jb-2k7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="vIV-YW-OBw"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="78.348214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

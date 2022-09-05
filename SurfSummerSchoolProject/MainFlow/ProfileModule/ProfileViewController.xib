@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="SurfSummerSchoolProject" customModuleProvider="target">
+            <connections>
+                <outlet property="logoutButtonConfigurator" destination="y1s-KJ-QTN" id="mAd-zA-Fbc"/>
+                <outlet property="tableView" destination="yX5-UZ-Ulb" id="dIg-Ig-OTu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1s-KJ-QTN">
+                    <rect key="frame" x="16" y="764" width="382" height="48"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="ur4-6P-6wc"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="logoutButton:" destination="-1" eventType="touchUpInside" id="zW6-ER-nsX"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yX5-UZ-Ulb">
+                    <rect key="frame" x="0.0" y="44" width="414" height="700"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="y1s-KJ-QTN" firstAttribute="top" secondItem="yX5-UZ-Ulb" secondAttribute="bottom" constant="20" id="5Ah-Dh-Tie"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="y1s-KJ-QTN" secondAttribute="trailing" constant="16" id="GX0-m5-vdt"/>
+                <constraint firstItem="y1s-KJ-QTN" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="UjO-ji-K0F"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="y1s-KJ-QTN" secondAttribute="bottom" constant="50" id="V0D-Dz-Dpj"/>
+                <constraint firstAttribute="trailing" secondItem="yX5-UZ-Ulb" secondAttribute="trailing" id="dSa-ue-dzc"/>
+                <constraint firstItem="yX5-UZ-Ulb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x1k-MO-6WC"/>
+                <constraint firstItem="yX5-UZ-Ulb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xNH-rE-aeY"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="92.410714285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

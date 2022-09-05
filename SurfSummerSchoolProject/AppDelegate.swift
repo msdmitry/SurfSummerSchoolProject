@@ -10,27 +10,58 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var tokenStorage: TokenStorage {
+        BaseTokenStorage()
+        }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
+        
+        startApplicationProces()
+        
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    
+    func startApplicationProces() {
+        runLaunchScreen()
+        
+        if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
+            runMainFlow()
+        } else {
+            let tempCredentials = AuthRequestModel(phone: "+71234567890", password: "qwerty")
+            AuthService().performLoginRequestAndSaveToken(credentials: tempCredentials) { result in
+                switch result {
+                case .success:
+                    self.runMainFlow()
+                case .failure:
+                    //Handle error, if token wasn't received
+                    DispatchQueue.main.async {
+                        MainViewController().navigationController?.pushViewController(ErrorViewController(), animated: true)
+                    }
+                }
+            }
+        }
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    
+    func runMainFlow() {
+        DispatchQueue.main.async {
+            self.window?.rootViewController = TabBarConfigurator().configure()
+        }
     }
-
+    
+    func runLaunchScreen() {
+        let launchScreenViewController = UIStoryboard(name: "LaunchScreen", bundle: .main).instantiateInitialViewController()
+        window?.rootViewController = launchScreenViewController
+    }
+    
+    func runLoginScreen() {
+        window?.rootViewController = LoginViewController()
+    }
 
 }
 
